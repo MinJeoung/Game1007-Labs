@@ -22,14 +22,22 @@
 
 #include "ImGuiWindowFrame.h"
 
+// the class keyword allows us to define new types of variables, and the data and functionality inside the
+// the data and functions inside the curly braces used to deffine this class are called members
 class Game
 {
 public:
-	static Game& Instance()
+	// this is a function which returns a variable of type game.
+	// for our purposes, this will be our way of accessing the singular game
+	// access the game by writing the line Game::Instance().whateveryouwantfromit
+	static Game& Instance() // static means this function belongs to the class and not any instance
 	{
 		static Game instance;
 		return instance;
 	}
+
+	// member functions are functions whichc belong to a certain object of a certain type
+	// we can access them by using the . operator on any variable to access its member functions and variables
 
 	// simply set the isRunning variable to true
 	void Init();
@@ -57,6 +65,7 @@ public:
 
 	[[nodiscard]] SDL_Window* GetWindow() const;
 
+	// private Member variables. These are variables which this class has access to, not outside of class.
 private:
 	Game();
 	~Game();

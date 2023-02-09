@@ -8,6 +8,8 @@
 #include "Button.h"
 #include "Label.h"
 
+//This caalss defines what is in the main gameplay section of our gmae. This is where players, enemies, bullets, etc. will live
+//This class has a Start(), Update() and Draw() function which are called by the framework at a given time
 class PlayScene : public Scene
 {
 public:
